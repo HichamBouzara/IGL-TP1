@@ -1,0 +1,125 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package TP;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import TP.VectorHelper;
+import org.junit.Assert;
+/**
+ *
+ * @author Newbie
+ */
+public class VectorHelperTest {
+    
+    public VectorHelperTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of TrieVecteur method, of class VectorHelper.
+     */
+    @Test
+    public void testTrieVecteur() {
+        System.out.println("TrieVecteur");
+        int[] t = {66, 15, 21};
+        VectorHelper instance = new VectorHelper(3);
+        instance.TrieVecteur(t);
+        int[] expResult = {15,21,66};
+        assertArrayEquals(expResult, t);
+        
+    }
+
+    /**
+     * Test of SommeVecteurs method, of class VectorHelper.
+     */
+    @Test
+    public void testSommeVecteurs() throws Exception {
+        System.out.println("SommeVecteurs");
+        int[] v1 = {15, 5, 63};
+        int[] v2 = {7, 44, 13};
+        VectorHelper instance = new VectorHelper(3);
+        int[] expResult = {22, 49, 76};
+        int[] result = instance.SommeVecteurs(v1, v2);
+        assertArrayEquals(expResult, result);
+    }
+
+    /**
+     * Test of InverseVecteur method, of class VectorHelper.
+     */
+    @Test
+    public void testInverseVecteur() {
+        System.out.println("InverseVecteur");
+        int[] tab = {1, 4, 8 ,12};
+        VectorHelper instance = new VectorHelper(4);
+        instance.InverseVecteur(tab);
+        int[] expResult = {12, 8, 4, 1};
+        
+        assertArrayEquals(expResult, tab);
+        
+    }
+
+    /**
+     * Test of MinMaxVecteur method, of class VectorHelper.
+     */
+    @Test
+    public void testMinMaxVecteur() {
+        System.out.println("MinMaxVecteur");
+        int[] tab = {15, 3, 99, 46};
+        VectorHelper instance = new VectorHelper(4);
+        String result = instance.MinMaxVecteur(tab);
+        String expResult = "Valeur maximale = 99 et la Valeur minimale = 3";
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of Double method, of class VectorHelper.
+     */
+    @Test
+    public void testDouble() {
+        System.out.println("Double");
+        int[] tab = {2, 5, 16};
+        VectorHelper instance = new VectorHelper(3);
+        instance.Double(tab);
+        int[] expResult = {4, 10, 32};
+        assertArrayEquals(expResult, tab);
+        
+    }
+
+    /**
+     * Test of Carre method, of class VectorHelper.
+     */
+    @Test
+    public void testCarre() {
+        System.out.println("Carre");
+        int[] tab = {2, 3, 1};
+        VectorHelper instance = new VectorHelper(3);
+        instance.Carre(tab);
+        int[] expResult = {4, 9, 1};
+        assertArrayEquals(expResult, tab);
+        
+    }
+    
+}

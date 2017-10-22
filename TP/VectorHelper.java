@@ -1,3 +1,5 @@
+package TP;
+
 /**
  *<h1>VectorHelper</h1>
  * Le programme <b>VectorHelper</b> offre divers opérations sur les vecteurs,
@@ -12,10 +14,21 @@
  * @since 15-10-2017
  */
 public class VectorHelper {
-
+        /**
+         * tableau des entiers à visibilité public
+         */
 	public int[] vecteur ;
-	public int taille;
+
+    /**
+     * Un entier à visibilité public
+     */
+    public int taille;
 	
+        /**
+         * Un constructeur qui sert à allouer un espace mémoire 
+         * pour le vecteur de taille t qui est en paramètre
+         * @param t un entier qui représente la taille du vecteur
+         */
 	public VectorHelper(int t){ 
 		
 		this.taille = t;
@@ -24,10 +37,13 @@ public class VectorHelper {
 	}
 	
 	
-	
+	/**
+         * Tri le vecteur du taille t
+         * @param t un entier qui représente la taille du vecteur à trier
+         */
 	public void TrieVecteur(int[] t){
         int taille=t.length, j , aux ;
-        for(int i=1;i<taille;i++){ //on commence � 1 
+        for(int i=1;i<taille;i++){
             j=0 ; while (t[j]<t[i]) j++ ;
             aux = t[i];
             for(int k=i;k>j;k--) t[k]=t[k-1];
@@ -36,12 +52,18 @@ public class VectorHelper {
 
     }
 	
-	
+	/**
+         * Faite la somme de 2 vecteurs
+         * @param v1 un tableau d'entiers qui représente le 1er vecteur 
+         * @param v2 un tableau d'entiers qui représente le 2eme vecteur
+         * @return vecteur somme
+         * @throws Exception  si la taille des deux vecteurs est différente 
+         */
 	public int[] SommeVecteurs(int[] v1, int[] v2) throws Exception {
 		
 		  int t1 = v1.length;
 		  int t2 = v2.length;
-		  int[] v = new int[t1+t2];
+		  int[] v = new int[t2];
 		 
 		 if (t1 != t2) throw new Exception("Les tailles des deux vecteurs ne sont pas pareils");
 		 
@@ -52,7 +74,10 @@ public class VectorHelper {
 		 return v;
 		} 	
 	
-	
+	/**
+         * Inverser les élements de vecteur tab
+         * @param tab un tableau d'entiers qui représente le vecteur à inverser
+         */
 	public void InverseVecteur(int[]tab){
 		int i=tab.length;
 		int[] result = new int[i];
@@ -68,8 +93,13 @@ public class VectorHelper {
 			tab[k]=result[k];	
 		}
 	}
-	public  void MinMaxVecteur(int [] tab ) {
-		
+        /**
+         * Trouver et afficher le min et le max élement du vecteur tab
+         * @param tab un tableau d'entiers qui représente le vecteur de la recherche
+         *return result une phrase qui indique le min et le max
+         */
+	public  String MinMaxVecteur(int [] tab ) {
+                String result = "";
 	       int max = tab[0];
 	       int min = tab[0];
 	       int taille= tab.length;
@@ -82,13 +112,16 @@ public class VectorHelper {
 	                min = elem;
 	            }
 			  
-	      System.out.println("\n\nValeur minimale = "+min);
-		  System.out.println("Valeur maximale = "+max);
+	      result = "Valeur maximale = "+max+" et la Valeur minimale = "+min;
+		return result;
 	    }
 		
 	
 	
-	
+	/**
+         * Remplacer les élements de vecteur tab par leurs doubles
+         * @param tab un tableau d'entiers qui représente le vecteur à manipuler
+         */
 	public  void Double(int[] tab){
 		  
 		  int t=tab.length;
@@ -103,8 +136,11 @@ public class VectorHelper {
 		  
 		  } 
 	
-	
-	public  void Carre(int[] tab){
+    /**
+     * Remplacer les élements de vecteur tab par leurs carrées
+     * @param tab un tableau d'entiers qui représente le vecteur à manipuler
+     */
+    public  void Carre(int[] tab){
 		  
 		  int t=tab.length;
 	         
